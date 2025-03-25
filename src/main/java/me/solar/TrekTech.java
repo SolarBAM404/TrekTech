@@ -1,6 +1,10 @@
 package me.solar;
 
 import lombok.Getter;
+import me.solar.menus.ReplicatorMenu;
+import me.solar.screen.ReplicatorScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -36,6 +40,7 @@ public class TrekTech
     {
         TrekBlocks.init(modEventBus);
         TrekItems.init(modEventBus);
+        TrekMenus.init(modEventBus);
         TrekRegister.init(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -82,6 +87,12 @@ public class TrekTech
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+
+        @SubscribeEvent
+        public static void onRegisterScreens(RegisterMenuScreensEvent event)
+        {
+            event.register(TrekMenus.REPLICATOR_MENU.get(), ReplicatorScreen::new);
         }
     }
 }

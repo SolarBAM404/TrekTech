@@ -3,6 +3,8 @@ package me.solar.data;
 import me.solar.TrekBlocks;
 import me.solar.TrekItems;
 import me.solar.TrekTech;
+import me.solar.blockentities.ReplicatorBlockEntity;
+import me.solar.blocks.ReplicatorBlock;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -19,7 +21,7 @@ public class EnglishGbLanguage extends LanguageProvider {
         add(TrekBlocks.REPLICATOR_BLOCK.get(), "Replicator Block");
 
         // Items
-        add(TrekItems.REPLICATOR_ITEM.get(), "Replicator");
+        add(ReplicatorBlock.SCREEN_TREKTECH_REPLICATOR, "Replicator");
 
         // GUI
         add("container.replicator", "Replicator");
