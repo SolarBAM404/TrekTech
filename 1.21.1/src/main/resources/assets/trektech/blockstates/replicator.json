@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "trektech:block/replicator",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "trektech:block/replicator"
+    },
+    "facing=south": {
+      "model": "trektech:block/replicator",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "trektech:block/replicator",
+      "y": 270
+    }
+  }
+}
